@@ -10,11 +10,10 @@ html{
   scroll-behavior: smooth;
 }
  
-#root{
-  display: grid;
-  align-items: center;
- 
-}
+ #rootChild{
+  width: 100vw;
+  height: 100vh;
+ }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -44,33 +43,34 @@ code {
   transition: 0.4s linear;
 }
 #mainContent{
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   opacity: 0;
   transform: translateY(20px);
 padding:1rem;
-  
+overflow-x: hidden;
   scroll-snap-type: y mandatory;
 }
 #mainContent.showMe{
   opacity: 1;
   transition: 0.4s linear;
   transform: translateY(0);
-  overflow-x: hidden;
+ 
   
 }
 #mainContent::-webkit-scrollbar{
-  width: 0;
+  display: none;
 }
 .videoContainer{
   scroll-snap-align: start;
   height: 100vh;
-  display: flex;
-  align-items: center;
+  padding-top: 0.6rem;
+  
 
 }
 
 .myVideos{
-  height: 70vh;
+  height: 90vh;
   display: block;
   
 }
@@ -103,19 +103,19 @@ padding:1rem;
     padding: 0;
   }
   .myVideos{
-    width: 70vw;
+   
     height: 90vh;
   }
   .feedback{
     position: absolute;
-    right: 14%;
+    right: 11%;
     z-index: 4;
     top: 20%;
     color: white;
   
   }
   .title{
-    left: 14%;
+    left: 13%;
   }
  
 }
