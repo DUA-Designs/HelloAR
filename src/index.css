@@ -67,14 +67,35 @@ padding:1rem;
 .videoContainer{
   scroll-snap-align: start;
   height: 100vh;
-  display: grid;
+  display: flex;
   align-items: center;
 
 }
+
 .myVideos{
   height: 90vh;
   display: block;
   
+}
+.feedback{
+  position: absolute;
+  right: -25%;
+  z-index: 4;
+  top: 20%;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  color: white;
+ 
+
+}
+.title{
+  position: absolute;
+  top: 3%;
+  left: 2%;
+  color: white;
+  z-index: 4;
+ 
 }
 @media Screen and (max-width:768px){
   #mainContent{
@@ -82,5 +103,12 @@ padding:1rem;
   }
   .myVideos{
     height: 100vh;
+  }
+  .feedback{
+    position: absolute;
+    right: 3%;
+    z-index: 4;
+    top: 20%;
+  
   }
 }
