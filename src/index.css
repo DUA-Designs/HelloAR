@@ -139,5 +139,8 @@ overflow-x: hidden;
   .desktopNavigation{
     display: none;
   }
+  .videoContainer{
+    padding: 0;
+  }
  
 }
