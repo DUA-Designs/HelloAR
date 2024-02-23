@@ -13,7 +13,7 @@ html{
 #root{
   display: grid;
   align-items: center;
-  background-color:burlywood;
+ 
 }
 
 code {
@@ -37,10 +37,7 @@ code {
   transform: translateY(20px);
   opacity: 0;
 }
-#start:hover{
-  color: black;
-  background-color: #9da09f;
-}
+ 
 #start.showMe{
   opacity: 1;
   transform: translateY(0);
@@ -85,9 +82,12 @@ padding:1rem;
   display: grid;
   text-align: center;
   align-items: center;
-  color: white;
+  
  
 
+}
+.feedback i{
+  font-size: 1.5rem;
 }
 .title{
   position: absolute;
@@ -99,16 +99,23 @@ padding:1rem;
 }
 @media screen and (max-width:768px){
   #mainContent{
+ 
     padding: 0;
   }
   .myVideos{
-    height: 70vh;
+    width: 70vw;
+    height: 90vh;
   }
   .feedback{
     position: absolute;
-    right: 3%;
+    right: 14%;
     z-index: 4;
     top: 20%;
+    color: white;
   
   }
+  .title{
+    left: 14%;
+  }
+ 
 }
