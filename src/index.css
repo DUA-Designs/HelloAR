@@ -108,14 +108,14 @@ overflow-x: hidden;
   }
   .feedback{
     position: absolute;
-    right: 11%;
+    right: 9%;
     z-index: 4;
     top: 20%;
     color: white;
   
   }
   .title{
-    left: 13%;
+    left: 8%;
   }
  
 }
