@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import {   puppy,v1  } from "./media";
+import {   puppy,v1,v2,v3,v4,v5  } from "./media";
 
  
  
-const myMedia=[v1,v1,v1];
+const myMedia=[v1,v2,v3,v4,v5];
 function App() {
   const [page1,setPage1]=useState(true);
    
