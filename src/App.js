@@ -10,7 +10,7 @@ function App() {
   const [clicked,setClicked]=useState([false,false,false,false,false,false,false,false]);
   const [current,setCurrent]=useState(null);
   const [videos,setVideos]=useState("");
-  const [scrollDirection,setScrollDirection]=useState(0);
+  const [scrollDirection,setScrollDirection]=useState(500);
    
    
 
@@ -26,7 +26,7 @@ async function  hanleMainContent(){
    
     
   }
-    function asyncRendering(){
+   async function asyncRendering(){
 
    
    
@@ -35,17 +35,20 @@ async function  hanleMainContent(){
     
      
     }
-     if(!page1){
-      for(let i=0;i<8; i++){
-        if(i===current){
-          videos[i].play();
-        }
-        else{
-          videos[i].pause();
-          videos[i].currentTime=0;
-        }
+    if(!page1){
+      await new Promise(resolve=>setTimeout(()=>resolve("This is for loading time"),500));
+      console.log(current);
+     for(let i=0;i<8; i++){
+      if(i===current){
+        videos[i].play();
       }
-     }
+      else{
+        videos[i].pause();
+        videos[i].currentTime=0;
+      }
+    }
+    }
+      
     
   }
   function handleLikes(ind){
@@ -63,9 +66,17 @@ async function  hanleMainContent(){
     setLikes([...curr]);
 
   }
-    function handleDeskNav(direction,type){
-    console.log(direction);
-    
+   async function handleDeskNav(direction="",type,event=null){
+  
+      if(event!==null){
+        if(event.deltaY<0){
+          direction="up";
+        }
+        else{
+          direction="down";
+        }
+      }
+       
      if(current>0 && direction==="up"){
       if(type==="normal"){videos[current-1].scrollIntoView({behavior:"smooth"});}
        setCurrent(current-1);
@@ -75,6 +86,8 @@ async function  hanleMainContent(){
        
       setCurrent(current+1);
      }
+
+
    
      
   }
@@ -82,13 +95,13 @@ async function  hanleMainContent(){
  
   useEffect(()=>{
    asyncRendering();
+   
   
 
    
   
   },[current] );
-
-  
+ 
   
 
   return (
@@ -99,7 +112,7 @@ async function  hanleMainContent(){
         <div className="  my-3 mx-auto " id="puppyContainer"><img src={puppy}  className="img-fluid" alt="puppy_Image"  id="puppy"></img></div>
          <button id="start" className="btn btn-dark col-10 col-lg-3 col-md-3 col-sm-10  mx-auto  my-3" onClick={hanleMainContent}>Start</button>  
         </div>: 
-     <div   id="mainContent" >      <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i class="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i class="fa-solid fa-down-long"></i></button></div>
+     <div   id="mainContent"  onWheel={(event)=>handleDeskNav("","scroll",event )}>      <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i class="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i class="fa-solid fa-down-long"></i></button></div>
        
 
                   
