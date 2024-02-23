@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/HelloAR/static/css/main.025a208b.css",
+    "main.js": "/HelloAR/static/js/main.12cf340e.js",
+    "static/media/video1.mp4": "/HelloAR/static/media/video1.eed703574ad70d0f6015.mp4",
+    "static/media/video7.mp4": "/HelloAR/static/media/video7.e61c68726ac981d6133a.mp4",
+    "static/media/video3.mp4": "/HelloAR/static/media/video3.ae233b7aa27766621864.mp4",
+    "static/media/video5.mp4": "/HelloAR/static/media/video5.10e8e02c080efb20c679.mp4",
+    "static/media/video8.mp4": "/HelloAR/static/media/video8.8155bfb84bc1559a63ab.mp4",
+    "static/media/video2.mp4": "/HelloAR/static/media/video2.3f2114ec9a5d10fe2335.mp4",
+    "static/media/video4.mp4": "/HelloAR/static/media/video4.6c00e35a10ba4ffb2732.mp4",
+    "static/media/video6.mp4": "/HelloAR/static/media/video6.a65a661f6315a6d4126c.mp4",
+    "static/media/Animated Puppy.gif": "/HelloAR/static/media/Animated Puppy.b8531dba887bbd6ae7d7.gif",
+    "index.html": "/HelloAR/index.html",
+    "main.025a208b.css.map": "/HelloAR/static/css/main.025a208b.css.map",
+    "main.12cf340e.js.map": "/HelloAR/static/js/main.12cf340e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.025a208b.css",
+    "static/js/main.12cf340e.js"
+  ]
+}
