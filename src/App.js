@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import {   puppy,v1,v2,v3,v4,v5  } from "./media";
+import {   puppy,v1,v2,v3,v4,v5,v6,v7,v8  } from "./media";
 
  
  
-const myMedia=[v1,v2,v3,v4,v5];
+const myMedia=[v1,v2,v3,v4,v5,v6,v7,v8];
 function App() {
   const [page1,setPage1]=useState(true);
+   
    
 
 async function  hanleMainContent(){
@@ -25,14 +26,7 @@ async function  hanleMainContent(){
     }
     
   }
-  function handlePlay(type,ind){
-      if(type==="down"){
-        document.querySelector(`.myVideos:nth-child(${ind+1})`).pause();
-      }
-      else{
-        document.querySelector(`.myVideos:nth-child(${ind+1})`).play();
-      }
-  }
+ 
  
   useEffect(()=>{
    asyncRendering();
@@ -52,7 +46,7 @@ async function  hanleMainContent(){
       
                 
                   
-                    {myMedia.map((item,index)=><div className="videoContainer"><video className="  myVideos mx-auto rounded  " autoPlay   key={index} loop onMouseDown={()=>handlePlay("down",index )} onMouseUp={()=>handlePlay("up",index)}><source src={item}  type="video/mp4"></source></video></div>)}
+                    {myMedia.map((item,index)=><div className="videoContainer"><video className="  myVideos mx-auto rounded  " controls autoPlay   key={index} loop   ><source src={item}  type="video/mp4"></source></video></div>)}
                  
                
                         
