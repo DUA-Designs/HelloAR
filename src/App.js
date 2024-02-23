@@ -95,6 +95,7 @@ async function  hanleMainContent(){
  
   useEffect(()=>{
    asyncRendering();
+   console.log(window.screen.availWidth)
    
   
 

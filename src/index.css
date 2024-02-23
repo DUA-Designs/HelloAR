@@ -108,13 +108,21 @@ overflow-x: hidden;
  
   top: 0;
   right: 2%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   height: 80%;
   width: 40px;
+  
 
 }
+@media screen and (min-width:1000px) {
+  .desktopNavigation{
+    display: flex;
+  }
+  
+}
+
 
 @media screen and (max-width:768px){
   #mainContent{
@@ -142,9 +150,7 @@ overflow-x: hidden;
   .title{
     left: 6%;
   }
-  .desktopNavigation{
-    display: none;
-  }
+ 
   .videoContainer{
     padding: 0 !important;
   }
