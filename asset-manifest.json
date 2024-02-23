@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/HelloAR/static/css/main.4b1b7731.css",
-    "main.js": "/HelloAR/static/js/main.bd127490.js",
+    "main.css": "/HelloAR/static/css/main.01cdead0.css",
+    "main.js": "/HelloAR/static/js/main.a39a0f4d.js",
     "static/media/video3.mp4": "/HelloAR/static/media/video3.4031acab6db0cf03063d.mp4",
     "static/media/video8.mp4": "/HelloAR/static/media/video8.8155bfb84bc1559a63ab.mp4",
     "static/media/video6.mp4": "/HelloAR/static/media/video6.a65a661f6315a6d4126c.mp4",
@@ -12,11 +12,11 @@
     "static/media/video5.mp4": "/HelloAR/static/media/video5.210a806542d27c2162cb.mp4",
     "static/media/Animated Puppy.gif": "/HelloAR/static/media/Animated Puppy.b8531dba887bbd6ae7d7.gif",
     "index.html": "/HelloAR/index.html",
-    "main.4b1b7731.css.map": "/HelloAR/static/css/main.4b1b7731.css.map",
-    "main.bd127490.js.map": "/HelloAR/static/js/main.bd127490.js.map"
+    "main.01cdead0.css.map": "/HelloAR/static/css/main.01cdead0.css.map",
+    "main.a39a0f4d.js.map": "/HelloAR/static/js/main.a39a0f4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b1b7731.css",
-    "static/js/main.bd127490.js"
+    "static/css/main.01cdead0.css",
+    "static/js/main.a39a0f4d.js"
   ]
 }
