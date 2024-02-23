@@ -124,7 +124,7 @@ overflow-x: hidden;
   .myVideos{
     width: 100vw;
     
-    height: 95vh;
+    height: 90vh;
 
     
     
@@ -133,7 +133,7 @@ overflow-x: hidden;
   }
   .feedback{
     position: absolute;
-    right: 9%;
+    right: 6%;
     z-index: 4;
     top: 20%;
     color: white;
