@@ -8,7 +8,8 @@ function App() {
   const [page1,setPage1]=useState(true);
   const [likes,setLikes]=useState([0,0,0,0,0,0,0,0]);
   const [clicked,setClicked]=useState([false,false,false,false,false,false,false,false]);
-  const [current,setCurrent]=useState("");
+  const [current,setCurrent]=useState(null);
+  const [videos,SetVideos]=useState("");
    
    
 
@@ -17,7 +18,9 @@ async function  hanleMainContent(){
     setPage1(false);
     await new Promise(resolve=>setTimeout(()=>resolve("This is for loading time"),500));
      document.getElementById("mainContent").classList.add("showMe");
+     await new Promise(resolve=>setTimeout(()=>resolve("This is for loading time"),1000));
     setCurrent(0);
+    SetVideos(document.querySelectorAll(".myVideos"));
     
   }
     function asyncRendering(){
@@ -30,7 +33,15 @@ async function  hanleMainContent(){
      
     }
      if(!page1){
-      document.querySelector(`.videoContainer:nth-child(${current}) .myVideos`).play();
+      for(let i=0;i<8; i++){
+        if(i===current){
+          videos[i].play();
+        }
+        else{
+          videos[i].pause();
+          videos[i].currentTime=0;
+        }
+      }
      }
     
   }
@@ -49,13 +60,15 @@ async function  hanleMainContent(){
     setLikes([...curr]);
 
   }
-  function handleDeskNav(direction){
-     if(current>1 && direction==="up"){
-       document.querySelector(`.videoContainer:nth-child(${current-1}) .myVideos`).scrollIntoView({behavior:"smooth"});
+  async function handleDeskNav(direction){
+    console.log(direction);
+    
+     if(current>0 && direction==="up"){
+      videos[current-1].scrollIntoView({behavior:"smooth"});
        setCurrent(current-1);
      }
-     if(current<8 && direction==="down"){
-      document.querySelector(`.videoContainer:nth-child(${current+1}) .myVideos`).scrollIntoView({behavior:"smooth"});
+     if(current<7 && direction==="down"){
+      videos[current+1].scrollIntoView({behavior:"smooth"});
       setCurrent(current+1);
      }
   }
