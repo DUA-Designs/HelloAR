@@ -50,6 +50,7 @@ code {
 padding:1rem;
 overflow-x: hidden;
   scroll-snap-type: y mandatory;
+  
 }
 #mainContent.showMe{
   opacity: 1;
@@ -59,12 +60,13 @@ overflow-x: hidden;
   
 }
 #mainContent::-webkit-scrollbar{
-  display: none;
+ width: 0;
 }
 .videoContainer{
   scroll-snap-align: start;
   height: 100vh;
   padding-top: 0.6rem;
+  display: flex;
   
 
 }
