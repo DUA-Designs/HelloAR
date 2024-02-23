@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap');
 body {
   margin: 0;
+  padding: 0;
   font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -134,6 +135,9 @@ overflow-x: hidden;
   }
   .title{
     left: 8%;
+  }
+  .desktopNavigation{
+    display: none;
   }
  
 }

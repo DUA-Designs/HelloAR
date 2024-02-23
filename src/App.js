@@ -9,7 +9,8 @@ function App() {
   const [likes,setLikes]=useState([0,0,0,0,0,0,0,0]);
   const [clicked,setClicked]=useState([false,false,false,false,false,false,false,false]);
   const [current,setCurrent]=useState(null);
-  const [videos,SetVideos]=useState("");
+  const [videos,setVideos]=useState("");
+  const [scrollDirection,setScrollDirection]=useState(0);
    
    
 
@@ -19,8 +20,10 @@ async function  hanleMainContent(){
     await new Promise(resolve=>setTimeout(()=>resolve("This is for loading time"),500));
      document.getElementById("mainContent").classList.add("showMe");
      await new Promise(resolve=>setTimeout(()=>resolve("This is for loading time"),1000));
+     setVideos(document.querySelectorAll(".myVideos"));
+     await new Promise(resolve=>setTimeout(()=>resolve("This is for loading time"),500));
     setCurrent(0);
-    SetVideos(document.querySelectorAll(".myVideos"));
+   
     
   }
     function asyncRendering(){
@@ -60,27 +63,32 @@ async function  hanleMainContent(){
     setLikes([...curr]);
 
   }
-  async function handleDeskNav(direction){
+    function handleDeskNav(direction,type){
     console.log(direction);
     
      if(current>0 && direction==="up"){
-      videos[current-1].scrollIntoView({behavior:"smooth"});
+      if(type==="normal"){videos[current-1].scrollIntoView({behavior:"smooth"});}
        setCurrent(current-1);
      }
      if(current<7 && direction==="down"){
-      videos[current+1].scrollIntoView({behavior:"smooth"});
+       if(type==="normal"){videos[current+1].scrollIntoView({behavior:"smooth"});}
+       
       setCurrent(current+1);
      }
+   
+     
   }
  
  
   useEffect(()=>{
    asyncRendering();
-   console.log("This is working");
+  
 
    
   
   },[current] );
+
+  
   
 
   return (
@@ -91,8 +99,8 @@ async function  hanleMainContent(){
         <div className="  my-3 mx-auto " id="puppyContainer"><img src={puppy}  className="img-fluid" alt="puppy_Image"  id="puppy"></img></div>
          <button id="start" className="btn btn-dark col-10 col-lg-3 col-md-3 col-sm-10  mx-auto  my-3" onClick={hanleMainContent}>Start</button>  
         </div>: 
-     <div   id="mainContent" >      <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up")}><i class="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down")}><i class="fa-solid fa-down-long"></i></button></div>
-      
+     <div   id="mainContent" >      <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i class="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i class="fa-solid fa-down-long"></i></button></div>
+       
 
                   
                     {myMedia.map((item,index)=><div className="videoContainer" key={index}>
