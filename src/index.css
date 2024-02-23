@@ -73,7 +73,7 @@ padding:1rem;
 }
 
 .myVideos{
-  height: 90vh;
+  height: 70vh;
   display: block;
   
 }
@@ -97,7 +97,7 @@ padding:1rem;
   z-index: 4;
  
 }
-@media Screen and (max-width:768px){
+@media screen and (max-width:768px){
   #mainContent{
     padding: 0;
   }

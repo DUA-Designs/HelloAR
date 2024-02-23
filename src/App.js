@@ -54,7 +54,8 @@ async function  hanleMainContent(){
                 
                   
                     {myMedia.map((item,index)=><div className="videoContainer   ">
-                      <div className="position-relative  mx-auto  "><video className="  myVideos mx-auto rounded d-flex" controls autoPlay   key={index} loop > <source src={item}  type="video/mp4"></source></video>
+                      <div className="position-relative  mx-auto  "><video className="  myVideos mx-auto rounded d-flex" controls autoPlay   key={index} loop > <source src={item}  type="video/mp4"></source>
+                      Your browser does not support the video tag.</video>
                       <div className="feedback "><button className="btn btn-light rounded-circle my-2" onClick={()=>handleLikes(index)}><i class="fa-solid fa-thumbs-up"></i></button>
                           <p>{likes[index]}</p>
                       
