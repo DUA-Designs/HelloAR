@@ -50,6 +50,7 @@ code {
 padding:1rem;
 overflow-x: hidden;
   scroll-snap-type: y mandatory;
+   
   
 }
 #mainContent.showMe{
@@ -64,6 +65,7 @@ overflow-x: hidden;
 }
 .videoContainer{
   scroll-snap-align: start;
+  
   height: 100vh;
   padding-top: 0.6rem;
   display: flex;
@@ -99,14 +101,28 @@ overflow-x: hidden;
   z-index: 4;
  
 }
+
+.desktopNavigation{
+  position: sticky;
+ 
+  top: 0;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+  width: 40px;
+
+}
+
 @media screen and (max-width:768px){
   #mainContent{
  
     padding: 0;
   }
   .myVideos{
-   
-    height: 90vh;
+   width: 100vw;
+    height: 100vh;
   }
   .feedback{
     position: absolute;
