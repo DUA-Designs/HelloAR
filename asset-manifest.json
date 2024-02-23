@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/HelloAR/static/css/main.75b4b23a.css",
-    "main.js": "/HelloAR/static/js/main.bd1ffab5.js",
-    "static/media/video3.mp4": "/HelloAR/static/media/video3.ae233b7aa27766621864.mp4",
+    "main.js": "/HelloAR/static/js/main.35b295db.js",
+    "static/media/video3.mp4": "/HelloAR/static/media/video3.4031acab6db0cf03063d.mp4",
     "static/media/video8.mp4": "/HelloAR/static/media/video8.8155bfb84bc1559a63ab.mp4",
-    "static/media/video4.mp4": "/HelloAR/static/media/video4.6c00e35a10ba4ffb2732.mp4",
     "static/media/video6.mp4": "/HelloAR/static/media/video6.a65a661f6315a6d4126c.mp4",
+    "static/media/video4.mp4": "/HelloAR/static/media/video4.147bf30acff717bcf09c.mp4",
     "static/media/video2.mp4": "/HelloAR/static/media/video2.54d9f289e240a4606495.mp4",
     "static/media/video7.mp4": "/HelloAR/static/media/video7.5210600fcc3d6e10e8d9.mp4",
     "static/media/video1.mp4": "/HelloAR/static/media/video1.86b51282ffa0e4473271.mp4",
@@ -13,10 +13,10 @@
     "static/media/Animated Puppy.gif": "/HelloAR/static/media/Animated Puppy.b8531dba887bbd6ae7d7.gif",
     "index.html": "/HelloAR/index.html",
     "main.75b4b23a.css.map": "/HelloAR/static/css/main.75b4b23a.css.map",
-    "main.bd1ffab5.js.map": "/HelloAR/static/js/main.bd1ffab5.js.map"
+    "main.35b295db.js.map": "/HelloAR/static/js/main.35b295db.js.map"
   },
   "entrypoints": [
     "static/css/main.75b4b23a.css",
-    "static/js/main.bd1ffab5.js"
+    "static/js/main.35b295db.js"
   ]
 }
