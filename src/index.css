@@ -1,13 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+}
+html{
+  scroll-behavior: smooth;
+}
+ 
+#root{
+  display: grid;
+  align-items: center;
+  background-color:burlywood;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#puppyContainer{
+ overflow: hidden;
+ border-radius: 50%;
+ height: 170px;
+ width: 170px;
+ border:3px dotted burlywood;
+}
+#puppy{
+  transform: scale(2.3);
+  position: relative;
+  top: 15%;
+}
+#start{
+  
+  transform: translateY(20px);
+  opacity: 0;
+}
+#start:hover{
+  color: black;
+  background-color: #9da09f;
+}
+#start.showMe{
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.4s linear;
+}
+#mainContent{
+  height: 100vh;
+  opacity: 0;
+  transform: translateY(20px);
+padding:1rem;
+  
+  scroll-snap-type: y mandatory;
+}
+#mainContent.showMe{
+  opacity: 1;
+  transition: 0.4s linear;
+  transform: translateY(0);
+  overflow-x: hidden;
+  
+}
+#mainContent::-webkit-scrollbar{
+  width: 0;
+}
+.videoContainer{
+  scroll-snap-align: start;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+
+}
+.myVideos{
+  height: 90vh;
+  display: block;
+  
+}
+@media Screen and (max-width:768px){
+  #mainContent{
+    padding: 0;
+  }
+  .myVideos{
+    height: 100vh;
+  }
 }
