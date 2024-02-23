@@ -118,12 +118,18 @@ overflow-x: hidden;
 
 @media screen and (max-width:768px){
   #mainContent{
- 
+    background-color: black;
     padding: 0;
   }
   .myVideos{
     width: 100vw;
-    height: 100vh;
+    
+    height: 95vh;
+
+    
+    
+
+
   }
   .feedback{
     position: absolute;
