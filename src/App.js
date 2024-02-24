@@ -36,7 +36,7 @@ async function  hanleMainContent(){
      
     }
     if(!page1){
-      await new Promise(resolve=>setTimeout(()=>resolve("This is for loading time"),500));
+      
       console.log(current);
     
      for(let i=0;i<8; i++){
@@ -84,7 +84,7 @@ async function  hanleMainContent(){
         else{
           for(let i=0;i<8; i++){
             let {top, bottom  }=videos[i].getBoundingClientRect();
-            if(((top > 0 && top < window.innerHeight) ||
+            if(((top > 0 && top < window.innerHeight ) ||
             (bottom > 0 && bottom < window.innerHeight)) ){
                 setCurrent(i);
                 
