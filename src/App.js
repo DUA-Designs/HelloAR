@@ -10,7 +10,9 @@ function App() {
   //useful states that will handle the control of functions
   const [page1,setPage1]=useState(true); //takes care of the visibility of welcome page.
   const [likes,setLikes]=useState([0,0,0,0,0,0,0,0]); // state to add up like
+  const [dislikes,setDislikes]=useState([0,0,0,0,0,0,0,0]);// state to add up dislike
   const [clicked,setClicked]=useState([false,false,false,false,false,false,false,false]);// state to toggle Like
+  const [disClicked,setDisClicked]=useState([false,false,false,false,false,false,false,false]);
   const [current,setCurrent]=useState(null); //state to handle the current video in the viewport
   const [videos,setVideos]=useState(""); // state to just store and utilize all video containers as nodes.
   
@@ -50,21 +52,51 @@ function App() {
 
 
 
-  //function to handle like count based on the state of clicked
-  function handleLikes(ind){
-      let curr=likes;
-      let currClicked=clicked;
-      if(!clicked[ind]){
-      curr[ind]+=1;
+  //function to handle like and dislike count based on the state of clicked
+  function handleLikes(ind,type){
+    let currLikes=likes;
+    let currClickedLikes=clicked;
+    let currDislikes=dislikes;
+    let currClickedDislikes=disClicked;
     
-      }
-      else{
-        curr[ind]-=1;
-      }
-
-      currClicked[ind]=!currClicked[ind];
-      setClicked([...currClicked]);
-      setLikes([...curr]);
+      if(type==="like"){
+     
+        if(!clicked[ind]){
+        currLikes[ind]+=1;
+        if(currClickedDislikes[ind] && currDislikes[ind]>0){
+          currDislikes[ind]-=1;
+          currClickedDislikes[ind]=!currClickedDislikes[ind];
+          setDislikes([...currDislikes]);
+          setDisClicked([...currClickedDislikes]);
+        }
+        }
+        else{
+          if(currLikes[ind]>0){currLikes[ind]-=1;}
+        }
+        currClickedLikes[ind]=!currClickedLikes[ind];
+        setClicked([...currClickedLikes]);
+        setLikes([...currLikes]);
+     }
+     else{
+      
+        if(!disClicked[ind]){
+          currDislikes[ind]+=1;
+          if(currClickedLikes[ind] && currLikes[ind]>0){
+            currLikes[ind]-=1;
+            currClickedLikes[ind]=!currClickedLikes[ind];
+        setClicked([...currClickedLikes]);
+            setLikes([...currLikes]);
+          }
+          
+        }
+        else{
+          if(currDislikes[ind]>0){currDislikes[ind]-=1;}
+        }
+        currClickedDislikes[ind]=!currClickedDislikes[ind];
+        
+        setDisClicked([...currClickedDislikes]);
+        setDislikes([...currDislikes]);
+    }
 
   }
 
@@ -133,11 +165,13 @@ function App() {
                  {myMedia.map((item,index)=>
                      <div className="videoContainer" key={index}>
                        <div className="position-relative  mx-auto "><video className="  myVideos mx-auto rounded d-flex" controls       loop > <source src={item}  type="video/mp4"></source>Your browser does not support the video tag.</video>
-                          <div className="feedback "><button className="btn btn-dark rounded-circle my-2  " onClick={()=>handleLikes(index)}>{clicked[index]? <i className="fi fi-ss-social-network"></i>:<i className="fi fi-rs-social-network"></i>}</button>
+                          <div className="feedback "><button className="btn btn-dark rounded-circle my-2  " onClick={()=>handleLikes(index,"like")}>{clicked[index]? <i className="fi fi-ss-social-network"></i>:<i className="fi fi-rs-social-network"></i>}</button>
                             <p>{likes[index]}</p>
+                            <button className="btn btn-dark rounded-circle my-2" onClick={()=>handleLikes(index,"dislike")}>{disClicked[index]?<i className="fi fi-ss-hand"></i>:<i className="fi fi-rr-hand"></i>}</button>
+                            <p>{dislikes[index]}</p>
                           </div>
-                          <div className="title"><h3><i className="fa-solid fa-user"></i> @Video{index+1}</h3></div>
-                          <div className="desc"><h4>This is video{index+1}</h4></div>
+                          <div className="title rounded p-1"><h3><i className="fa-solid fa-user"></i> @Video{index+1}</h3></div>
+                          <div className="desc rounded p-1"><h4>This is video{index+1}</h4></div>
                        </div>
                      </div>)}                             
               </div>}

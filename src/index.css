@@ -23,7 +23,7 @@ code {
 /* HTML: <div class="loader"></div> */
  
 .loader {
-    width: 40px;
+    width: 100px;
     aspect-ratio: 1;
     border-radius: 50%;
     background: #f03355;
@@ -56,7 +56,7 @@ code {
   transform: translateY(20px);
 padding:1rem;
 overflow-x: hidden;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; /* This is the property that moves child sections*/ 
    
   
 }
@@ -71,7 +71,7 @@ overflow-x: hidden;
  width: 0;
 }
 .videoContainer{
-  scroll-snap-align: start;
+  scroll-snap-align: start;/* This is the property that takes cares aligning sections*/
   
   height: 100vh;
   
@@ -83,6 +83,7 @@ overflow-x: hidden;
 .myVideos{
   height: 90vh;
   display: block;
+  cursor: pointer;
   
 }
 .feedback{
@@ -106,14 +107,21 @@ overflow-x: hidden;
   left: 2%;
   color: white;
   z-index: 4;
- 
+
+}
+.title:hover{
+  background-color: rgba(39, 38, 38, 0.47);
 }
 .desc{
   position: absolute;
   bottom: 15%;
   left: 2%;
   color: white;
+ 
    
+}
+.desc:hover{
+  background-color: rgba(39, 38, 38, 0.47);
 }
 .desc h4{
   font-size: 1rem;
