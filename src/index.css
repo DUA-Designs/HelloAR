@@ -164,6 +164,9 @@ overflow-x: hidden;
 
 
   }
+  .videoContainer{
+    align-items: initial;
+  }
   .feedback{
     position: absolute;
     right: 6%;

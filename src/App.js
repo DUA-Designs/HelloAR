@@ -154,14 +154,21 @@ function App() {
   return (
     <div   id="rootChild">
       
-      {//conditionally render different components
+      {/*conditionally renders different components
+       This is the object representation of the layout. 
+         mainContent:{desktopNavigation:{buttons},
+                      videoContainer:{div:{myVideos,feedback,title,desc}},
+                     }
+                       
+
+      */
       page1?<div className="  text-center   d-flex flex-column align-items-center justify-content-around" style={{height:"100vh"}}>
          <h1>Hello AR. Welcome to shorts App.</h1>
          <div className="loader"></div>
          <button id="start" className="btn btn-dark col-10 col-lg-3 col-md-3 col-sm-10  mx-auto  my-3" onClick={handleMainContent}>Start</button>  
         </div>: 
               <div   id="mainContent"  onScroll={(event)=>handleDeskNav("","scroll",event )}>
-               <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i className="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i className="fa-solid fa-down-long"></i></button></div> 
+               <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i className="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i className="fa-solid fa-down-long"></i></button></div>
                  {myMedia.map((item,index)=>
                      <div className="videoContainer" key={index}>
                        <div className="position-relative  mx-auto "><video className="  myVideos mx-auto rounded d-flex" controls       loop > <source src={item}  type="video/mp4"></source>Your browser does not support the video tag.</video>
