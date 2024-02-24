@@ -72,6 +72,10 @@ async function  hanleMainContent(){
 
   }
      function handleDeskNav(direction="",type,event=null){
+
+      if(videos.length===0){
+        return "";
+      }
        
       if(event!==null){
         
@@ -141,7 +145,7 @@ async function  hanleMainContent(){
         <div className="  my-3 mx-auto " id="puppyContainer"><img src={puppy}  className="img-fluid" alt="puppy_Image"  id="puppy"></img></div>
          <button id="start" className="btn btn-dark col-10 col-lg-3 col-md-3 col-sm-10  mx-auto  my-3" onClick={hanleMainContent}>Start</button>  
         </div>: 
-     <div   id="mainContent"  onWheel={(event)=>handleDeskNav("","scroll",event )}>     <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i class="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i class="fa-solid fa-down-long"></i></button></div> 
+     <div   id="mainContent"  onScroll={(event)=>handleDeskNav("","scroll",event )}>     <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i class="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i class="fa-solid fa-down-long"></i></button></div> 
        
 
                   
