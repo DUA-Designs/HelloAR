@@ -110,8 +110,8 @@ overflow-x: hidden;
   right: 2%;
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  height: 80%;
+  justify-content: space-around;
+  height: 100%;
   width: 40px;
   
 

@@ -10,8 +10,8 @@ function App() {
   const [clicked,setClicked]=useState([false,false,false,false,false,false,false,false]);
   const [current,setCurrent]=useState(null);
   const [videos,setVideos]=useState("");
-  const [scrollDirection,setScrollDirection]=useState(500);
-   
+  
+  
    
 
 async function  hanleMainContent(){
@@ -38,6 +38,7 @@ async function  hanleMainContent(){
     if(!page1){
       await new Promise(resolve=>setTimeout(()=>resolve("This is for loading time"),500));
       console.log(current);
+    
      for(let i=0;i<8; i++){
       if(i===current){
         videos[i].play();
@@ -46,7 +47,11 @@ async function  hanleMainContent(){
         videos[i].pause();
         videos[i].currentTime=0;
       }
+      
+    
+      
     }
+    
     }
       
     
@@ -66,26 +71,47 @@ async function  hanleMainContent(){
     setLikes([...curr]);
 
   }
-   async function handleDeskNav(direction="",type,event=null){
-  
+     function handleDeskNav(direction="",type,event=null){
+       
       if(event!==null){
-        if(event.deltaY<0){
+        
+        if(event.deltaY<0 &&  Math.abs(event.deltaY)===100){
           direction="up";
         }
-        else{
+        else if(event.deltaY>0 && Math.abs(event.deltaY)===100 ){
           direction="down";
         }
+        else{
+          for(let i=0;i<8; i++){
+            let {top, bottom  }=videos[i].getBoundingClientRect();
+            if(((top > 0 && top < window.innerHeight) ||
+            (bottom > 0 && bottom < window.innerHeight)) ){
+                setCurrent(i);
+                
+              }
+          
+            
+          }
+        }
+        
       }
-       
+   
+    
+      
+      
      if(current>0 && direction==="up"){
       if(type==="normal"){videos[current-1].scrollIntoView({behavior:"smooth"});}
        setCurrent(current-1);
+      
      }
      if(current<7 && direction==="down"){
        if(type==="normal"){videos[current+1].scrollIntoView({behavior:"smooth"});}
        
       setCurrent(current+1);
      }
+     
+      
+     
 
 
    
@@ -95,13 +121,15 @@ async function  hanleMainContent(){
  
   useEffect(()=>{
    asyncRendering();
-   console.log(window.screen.availWidth)
+   
    
   
 
    
   
   },[current] );
+
+
  
   
 
@@ -109,11 +137,11 @@ async function  hanleMainContent(){
     <div   id="rootChild">
       
       {page1?<div className="  text-center   d-grid align-items-center" style={{height:"100vh"}}>
-         <h1>Hello AR. Welcome to my shorts App.</h1>
+         <h1>Hello AR. Welcome to shorts App.</h1>
         <div className="  my-3 mx-auto " id="puppyContainer"><img src={puppy}  className="img-fluid" alt="puppy_Image"  id="puppy"></img></div>
          <button id="start" className="btn btn-dark col-10 col-lg-3 col-md-3 col-sm-10  mx-auto  my-3" onClick={hanleMainContent}>Start</button>  
         </div>: 
-     <div   id="mainContent"  onWheel={(event)=>handleDeskNav("","scroll",event )}>      <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i class="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i class="fa-solid fa-down-long"></i></button></div>
+     <div   id="mainContent"  onWheel={(event)=>handleDeskNav("","scroll",event )}>     <div  className="desktopNavigation"><button className="btn btn-dark"  onClick={()=>handleDeskNav("up","normal")}><i class="fa-solid fa-up-long"></i></button><button className="btn btn-dark" onClick={()=>handleDeskNav("down","normal")}><i class="fa-solid fa-down-long"></i></button></div> 
        
 
                   
