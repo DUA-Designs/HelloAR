@@ -159,13 +159,13 @@ overflow-x: hidden;
     
     height: 90vh;
 
-    
-    
-
-
   }
   .videoContainer{
     align-items: initial;
+  }
+  .desc{
+    
+    bottom: 22%;
   }
   .feedback{
     position: absolute;
