@@ -174,7 +174,7 @@ function App() {
                        <div className="position-relative  mx-auto "><video className="  myVideos mx-auto rounded d-flex" controls       loop > <source src={item}  type="video/mp4"></source>Your browser does not support the video tag.</video>
                           <div className="feedback "><button className="btn btn-dark rounded-circle my-2  " onClick={()=>handleLikes(index,"like")}>{clicked[index]? <i className="fi fi-ss-social-network"></i>:<i className="fi fi-rs-social-network"></i>}</button>
                             <p>{likes[index]}</p>
-                            <button className="btn btn-dark rounded-circle my-2" onClick={()=>handleLikes(index,"dislike")}>{disClicked[index]?<i className="fi fi-ss-hand"></i>:<i className="fi fi-rr-hand"></i>}</button>
+                            <button className="btn btn-dark rounded-circle my-2" onClick={()=>handleLikes(index,"dislike")}>{disClicked[index]?<i className="fi fi-ss-hand"></i>:<i className="fi fi-rs-hand"></i>}</button>
                             <p>{dislikes[index]}</p>
                           </div>
                           <div className="title rounded p-1"><h3><i className="fa-solid fa-user"></i> @Video{index+1}</h3></div>
