@@ -20,22 +20,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#puppyContainer{
- overflow: hidden;
- border-radius: 50%;
- height: 170px;
- width: 170px;
- border:3px dotted burlywood;
+/* HTML: <div class="loader"></div> */
+ 
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #f03355;
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    animation: l1 2s infinite cubic-bezier(0.3,1,0,1);
+    margin: 0 auto;
 }
-#puppy{
-  transform: scale(2.3);
-  position: relative;
-  top: 15%;
+@keyframes l1 {
+    33% {border-radius: 0;background: #514b82 ;clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
+    66% {border-radius: 0;background: #ffa516 ;clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
 }
+ 
 #start{
   
   transform: translateY(20px);
   opacity: 0;
+  padding: 1rem;
+  
 }
  
 #start.showMe{
@@ -68,9 +74,9 @@ overflow-x: hidden;
   scroll-snap-align: start;
   
   height: 100vh;
-  padding-top: 0.6rem;
-  display: flex;
   
+  display: flex;
+  align-items: center;
 
 }
 
@@ -102,17 +108,28 @@ overflow-x: hidden;
   z-index: 4;
  
 }
-
+.desc{
+  position: absolute;
+  bottom: 15%;
+  left: 2%;
+  color: white;
+   
+}
+.desc h4{
+  font-size: 1rem;
+}
 .desktopNavigation{
   position: sticky;
  
   top: 0;
-  right: 2%;
+  left: 95%;
+  
   display: none;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
   width: 40px;
+  
   
 
 }
@@ -151,8 +168,6 @@ overflow-x: hidden;
     left: 6%;
   }
  
-  .videoContainer{
-    padding: 0 !important;
-  }
+   
  
 }
